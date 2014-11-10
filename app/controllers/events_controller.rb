@@ -52,4 +52,12 @@ class EventsController < ApplicationController
   def event_date_params
     params.require(:event_date).permit(:start_at, :end_at, :sold_out, :url, :event_id)
   end
+
+  def event_place_params
+    params.require(:event_place).permit(:latitude, :longitude, :name)
+  end
+
+  def speaker_params
+    params.require(:speakers).permit(:box_height, :description, :embed, :name, :event_id)
+  end
 end
