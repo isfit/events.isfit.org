@@ -43,7 +43,7 @@ class Admin::EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    @event.update_attributes(params[:event])
+    @event.update_attributes(event_params)
 
     if @event.save
       redirect_to admin_event_path(@event)
@@ -55,10 +55,10 @@ class Admin::EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(params[:event])
+    @event = Event.new(event_params)
     @event.deleted = false
     @highest_weight = Event.order("weight DESC").first
-    if @highest_weigh.nil? 
+    if @highest_weight.nil? 
       @last_weight = 0 
     else
       @last_weight = @highest_weight.weight
@@ -85,4 +85,11 @@ class Admin::EventsController < ApplicationController
     @event.save
     redirect_to admin_events_path
   end
+
+  private
+
+  def event_params
+    params.require(:event).permit(:title, :event_type_id, :price_member, :price_other, :body, :deleted, :weight, :publish_at, :event_place_id, :sidebar, :created_at, :updated_at, :image_file_name, :image_content_type, :image_file_size, :image_updated_at,  :image_front_file_name, :image_front_content_type, :image_front_file_size, :image_front_updated_at)
+  end
+
 end

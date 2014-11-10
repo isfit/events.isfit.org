@@ -31,7 +31,8 @@
         </div>
         <div class="navbar-header navbar-right">
           <p class="navbar-text">
-            <a href="#" class="navbar-link">Username</a>
+
+            <%= link_to "Logout", logout_path  %>
           </p>
         </div>
         <div class="navbar-collapse collapse">
@@ -40,7 +41,6 @@
             <li><%= link_to "Events", admin_events_path  %></li>
             <li><%= link_to "Speakers", admin_speakers_path  %></li>
             <li><%= link_to "Places", admin_event_places_path  %></li>
-            <li><%= link_to "Logout", logout_path  %></li>
           </ul>
         </div>
       </nav>
@@ -49,7 +49,7 @@
         <%= yield %>
 
         <footer>
-          <p>&copy; Company 2012</p>
+          <p>&copy; ISFiT 2015</p>
         </footer>
 
       </div> <!-- /container -->
