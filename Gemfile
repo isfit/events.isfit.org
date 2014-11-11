@@ -32,6 +32,9 @@ gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 
+# Use pry
+gem 'pry'
+
 # Paperclip for has_attached_file
 gem 'paperclip'
 
@@ -39,6 +42,7 @@ gem 'bcrypt-ruby'
 
 # Use unicorn as the app server
 # gem 'unicorn'
+gem 'bootstrap-datepicker-rails'
 
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
