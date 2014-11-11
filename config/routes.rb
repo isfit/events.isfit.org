@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post 'logout' => 'sessions#destroy'
   post 'sessions' => 'sessions#create'
 
-  get "2013/:id" => "events#show", :constraints =>  { :year => /\d/ }
+  get "2015/:id" => "events#show", :constraints =>  { :year => /\d/ }
 
   namespace :admin do
     resources :events do

@@ -44,6 +44,10 @@ gem 'bcrypt-ruby'
 gem 'capistrano-rails', group: :development
 gem 'capistrano-rvm', group: :development
 gem 'capistrano-bundler', group: :development
+gem 'pry'
+gem 'font-awesome-sass'
+gem 'bluecloth'
+
 
 
 # Use debugger

@@ -1,293 +1,51 @@
-// Place all the styles related to the Events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container {
-  background: transparent;
+.event-box{
+  background-color: #0099CC;
+  border: 1px solid #000;
+  a:hover {
+    text-decoration: none;
+  }
 }
+.event-img{
+  border-right: 5px solid #EFAB44;
 
-article.event {
-  max-width: 720px;
-  height: 200px;
-  position: relative;
-  overflow: hidden;
 }
-
-div.meta {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
+.event-info{
   color: white;
-  position: absolute;
-  bottom: -5em;
-  left: -3em;
-  padding-left: 3.5em;
-  padding-right: 2.5em;
-  padding-top: 1em;
-  text-align: center;
-  font-size: .9em;
-}
-
-.type1 {
-  background: rgb(56,192,240);
-}
-
-.type2 {
-  background: rgb(4,129,185);
-}
-
-.type3 {
-  background: rgb(34,54,102);
-}
-
-.type4 {
-  background: rgb(216,52,21);
-}
-
-.type5 {
-  background: rgb(251,188,58);
-}
-
-.type7 {
-  background: #222;
-}
-
-div.meta p {
-  margin: 0;
-}
-
-div.meta div {
-  margin: .5em 0;
-}
-
-div.location {
-  margin-left: -1em;
-  margin-bottom: 1em;
-}
-
-h1.name {
-  position: absolute;
-  bottom: .2em;
-  margin: 0;
-  right: 0;
-  color: white;
-  text-transform: uppercase;
-  font-family: Helvetica Neue,Helvetica,"apertura",sans-serif;
-  max-width: 350px;
-  text-align: right;
-  display: inline;
-  padding: 0.2em 1.2em;
-  background: rgba(0, 0, 0, .7);
-  font-size: 2em;
-}
-
-table.price {
-  text-align: left;
-  width: 130px;
-  position: absolute;
-  bottom: 5.5em;
-  left: 4em;
-
-  td:last-of-type {
-    text-align: right;
+  h1{
+    margin-left: 20px;
+  }
+  table{
+    margin-bottom: 0px;
+  }
+  td{
+    padding-left: 20px;
+  }
+  p{
+    margin-left: 20px;
+  }
+  i{
+    margin-left: 20px;
   }
 }
-
-span.date {
-  display: block;
-  width: 100%;
-  text-align: center;
-  height: 80%;
-  font-size: 11em;
-  line-height: 1em;
+.body{
+  margin-top: 10px;
 }
-span.month {
-  display: block;
-  width: 100%;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 4em;
-}
-
-
-
-
-
-
-.offset1 {
-  margin-left: 60px;
-}
-
-
-.datewrapper {
-  position: relative;
-  margin-bottom: 2em;
-
-  &.empty {
-    display: none;
-  }
-
-
-
-
-
-  article.dateblock {
-    background: white;
-    margin-right: -20px;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 200px;
-    min-width: 170px;
-    position: fixed;
-    position: absolute;
-
-    &.active:not(.stationary) {
-      position: fixed;
-      top: 20px;
-    }
-
-    &.stationary {
-      position: absolute !important;
-      bottom: 0;
-      left: 0;
-    }
-  }
-
-}
-
-
-.well {
-  border-radius: 0;
-  box-shadow: none;
-}
-
-#legend {
-  text-align: center;
-  overflow: hidden;
-  .eventtype {
-    margin: 0 -1.2em;
-    display: inline-block;
-    height: 60px;
-    width: 120px;
-    vertical-align: bottom;
-    position: relative;
-
-    &:hover {
-      .decor {
-        z-index: 1;
-      }
-    }
-
-    .decor {
-      display: inline-block;
-      height: 120px;
-      width: 80px;
-      border-radius: 0%;
-      position: absolute;
-      z-index: 1;
-      left: 0;
-    }
-
-    p {
-      color: white;
-      text-shadow: 0 1px 0 #333;
-      z-index: 3;
-      position: relative;
-      margin-top: 2em;
-      font-size: 1em;
-      line-height: 1em;
-
-      &.long {
-        margin-top: 1.5em;
-      }
-    }
-  }
-  
-}
-
-#event-header {
-  height: 30em;
-  padding: 0; margin: 0;
-  //background: url('http://lorempixel.com/800/600/people') no-repeat center center; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  position:relative;
-  right: 0;
-  margin-bottom: 2em;
-  max-width: 100%;
-
-    overflow: hidden;
-}
-
-#header-image {
-  margin: 0;
-  img {
-    width: 940px;
-    max-width: none;
-    height: 420px;
-  }
-}
-
-#event-header .header-text {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 310px;
-  height: 100%;
-  color: white;
-  background: rgba(0,0,0,.7);
-  text-shadow: 0 1px 0 #333;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 1em;
-  overflow: hidden;
-
-  -webkit-transition: width .3s;
-  -o-transition: width .3s;
-  -ms-transition: width .3s;
-  -moz-transition: width .3s;
-  transition: width .3s;
-
-  h1 {
-    font-size: 2.5em;
-    line-height: 1.2em;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .event-details {
-    margin-top: 1em;
-    i {
-      width: 10px;
-      display: inline-block;
-      text-align: center;
-    }
-  }
-}
-
-div.event-button.round {
+.event-button{
+  margin-left: 20px;
+  background-color: #EFAB44;
   height: 100px;
   width: 100px;
   border-radius: 50%;
-  background: red;
   color: white;
   margin: auto;
   cursor: pointer;
   padding: 2.5em 0;
   text-align: center;
-  vertical-align: middle;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 
   line-height: 2em;
-  margin-left: 4.5em;
-
   &:active {
     box-shadow: 0 2px 4px #333 inset;
 
@@ -295,151 +53,15 @@ div.event-button.round {
   }
 }
 
-div.event-button.round.disabled {
-  opacity: .6;
-}
 
-.tickets {
-  margin: 1em 0;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-
-  table {
-    margin: 1em 0;
-
-    td:first-of-type {
-      font-weight: bold;
-      width: 10em;
+  @media (max-width: 960px) {
+    .event-box{
+      background-color: transparent;
+    }
+    .event-info{
+      background-color: #0099CC;
+    }
+    .event-img{
+      border-right: 0;
     }
   }
-
-  a:hover {
-    text-decoration: none;
-  }
-}
-
-
-.partners {
-  text-align: center;
-  height: 92px;
-}
-
-.facebook-button {
-  margin-bottom: 10px;
-  background-color: #3B5998;
-  width: 287px;
-  height: 50px;
-  color: white;
-  padding: 2%;
-  &:hover {
-    text-decoration: none;
-  }
-  p {
-    line-height: 50px;
-    font-size: 1.5em;
-    padding-left: 7%;
-  }
-  i {
-    padding-right: 5%;
-  }
- 
-}
-
-.twitter-button {
-  background-color: #4099FF;
-  margin-bottom: 10px;
-  width: 287px;
-  height: 50px;
-  color: white;
-  padding: 2%;
- p {
-    line-height: 50px;
-    font-size: 1.5em;
-    padding-left: 5%;
-  }
-}
-
-.no-underline {
-  &:hover {
-    text-decoration: none;
-  }
- 
-}
-
-
-// @media (min-width: 1200px) {
-//   .offset1 {
-//     margin-left: 130px;
-//   }
-
-
-//   #event-header img {
-//     max-width: 920px;
-//   }
-// }
-
-// @media (max-width: 979px) and (min-width: 768px) {
-//   .offset1 {
-//     margin-left: 6px;
-//   }
-// }
-
-
-// @media (max-width: 767px) {
-//   #header-image {
-//     height: 200px;
-//     img {
-//       min-height: 200px;
-//       width: 100%;
-//     }
-//   }
-
-//   article.event {
-//     width: 100%;
-//     max-width: none;
-//   }
-
-//   #event-header {
-//     height: auto;
-
-
-//     .header-text {
-//       position: relative;
-//       width: 100%;
-//       bottom: auto;
-//       right: auto;
-//     }
-//   }
-
-
-//   .offset1 {
-//     margin-left: 60px;
-//   }
-
-
-//   article.dateblock {
-//     z-index: 999;
-//     background: white;
-//     margin-right: -20px;
-//     padding-left: 15px;
-//     padding-right: 15px;
-//     height: 50px;
-//     top: 0;
-//     left:0;
-//     width: 100%;
-//     margin-left: 0;
-//     position: static;
-
-//     span.date {
-//       font-size: 1em;
-//       display: inline;
-//     }
-
-//     span.month {
-//       font-size: 1em;
-//       display: inline;
-//     }
-//   }
-// }
-

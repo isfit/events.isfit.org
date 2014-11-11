@@ -1,1 +1,38 @@
-<h1> Foo </h1>
+<div class="col-md-12">
+	<% counter = 0 %> 
+	<% @festival_events.each_with_index do |date, i| %>
+		<% event = date.event %>
+		<%if i == 0 %>
+			<div class="row">
+				<div class="col-md-8">
+					<a href="2015/<%=date.id%>">
+						<div id="top-left" class="col-md-12 event_pic_<%= i%2%>" style="background:url(<%=event.image(:cover)%>); background-size: cover;">
+							<h1><span><%= event.title %></span></h1>
+			      </div>
+		    	</a>
+				</div>	
+		<% elsif i == 1 %>
+				<div class="col-md-4">
+					<a href="2015/<%=date.id%>">
+						<div id="top-left" class="col-md-12 event_pic_<%= i%2%>" style="background:url(<%=event.image(:cover)%>); background-size: cover;">
+							<h1><span><%= event.title %></span></h1>
+			      </div>
+		    	</a>			
+		    </div>
+			</div>
+		<% else %>
+			<% if i == 2 %>
+				</div>
+			<% end %>
+			<div class="col-md-4">
+					<a href="2015/<%=date.id%>">
+						<div id="small-boxes" class="col-md-12 event_pic_<%= i%2%>" style="background:url(<%=event.image(:cover)%>); background-size: cover;">
+							<h1><span><%= event.title %></span></h1>
+			      </div>
+		    	</a>
+
+			</div>
+		<% end %>
+	<% end %>
+	</div>
+</div>
