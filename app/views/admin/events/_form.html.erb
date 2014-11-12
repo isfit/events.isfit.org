@@ -3,22 +3,67 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :title, :input_html => {class: "col-md-6"} %>
-    <%= f.input :event_type_id, collection: @event_types, as: :select %>
-    <%= f.input :event_place_id, collection: @event_places, as: :select %>
-    <%= f.input :price_member, :input_html => {class: "col-md-6"}, hint: "Price for members of Samfundet (if applicable)." %>
-    <%= f.input :price_other, :input_html => {class: "col-md-6"}, hint: "Price for all others." %>
-    <%= f.input :body, :input_html => {class: "col-md-6"} %>
-    <%= f.input :sidebar, :input_html => {class: "col-md-6"} %>
-    <%= f.input :publish_at, :input_html => {class: "col-md-2"}, hint: "Time is in UTC (GMT +0). Norway is in UTC+1, so remember that." %>
-    <p>Image for event page(920x420)</p>
-    <%= f.file_field :image, hint: "Image to use for cover" %><br>
-    <p>Image for front page(720x200)</p>
-    <%= f.file_field :image_front, hint: "Image to use on front page" %>
-  </div>
 
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+    <hr>
+    <div class="form-group">
+      <%= f.label :event_type_id %>
+      <%= f.text_field  :event_type_id, collection: @event_types, class: 'form-control'%>
+    </div>
+    <hr>
+    <div class="field">
+      <%= f.label :event_place_id %>
+      <%= f.text_field  :event_place_id, collection: @event_places, class: 'form-control' %>
+    </div>
+    <hr>  
+    <div class="field">
+      <%= f.label :price_member %><br>
+      <%= f.hint 'Price for members of Samfundet (if applicable).' %>
+      <%= f.text_field :price_member, class: 'form-control' %>
+    </div>
+    <hr>      
+    <div class="field">
+      <%= f.label :price_other %><br>
+      <%= f.hint 'Price for all others.' %>
+      <%= f.text_field :price_other, class: 'form-control' %>
+    </div>
+    <hr>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :body, class: 'form-control' %>      
+    </div>
+    <hr>
+    <div class="field">
+      <%= f.label :sidebar%>
+      <%= f.text_field :sidebar, class: 'form-control' %>
+    </div>
+    <hr>
+    <div class="field">
+      <%= f.label :publish_at %><br>
+      <%= f.hint 'Time is in UTC (GMT +0). Norway is in UTC+1, so remember that.' %>
+      <%= f.text_field :publish_at, class: 'form-control' %>
+    </div>
+    <hr>
+    <div class="field">
+      <p>Image for event page(920x420)</p>
+      <%= f.file_field :image, hint: "Image to use for cover" %><br>
+    </div>
+    <hr>
+    <div class="field">
+         <p>Image for front page(720x200)</p>
+    <%= f.file_field :image_front, hint: "Image to use on front page" %>
+    </div>
+ 
+  </div>
+  <br>
   <div class="form-actions">
-    <%= f.button :submit %>
+      <%= f.button :submit, class: 'btn btn-primary'%>
   </div>
 <% end %>
 </div>
+
+
+
