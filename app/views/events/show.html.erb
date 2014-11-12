@@ -30,7 +30,7 @@
 	          </tr>
 	        </table>
         	<% if @datetime.url && @datetime.url != "" %>
-          	<a href="http://www.samfundet.no/arrangement/billetter/betal/<%= @datetime.url %>">
+          	<a href="<%= @datetime.url %>">
             	<div class="event-button round">Buy ticket</div>
           	</a>
         	<% end %>
