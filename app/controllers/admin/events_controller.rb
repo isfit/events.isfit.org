@@ -89,7 +89,7 @@ class Admin::EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :event_type_id, :price_member, :price_other, :body, :deleted, :weight, :publish_at, :event_place_id, :sidebar, :created_at, :updated_at, :image_file_name, :image_content_type, :image_file_size, :image_updated_at,  :image_front_file_name, :image_front_content_type, :image_front_file_size, :image_front_updated_at)
+    params.require(:event).permit(:id, :title, :event_type_id, :price_member, :price_other, :body, :deleted, :weight, :publish_at, :event_place_id, :sidebar, :created_at, :updated_at, :image_file_name, :image_content_type, :image_file_size, :image_updated_at,  :image_front_file_name, :image_front_content_type, :image_front_file_size, :image_front_updated_at)
   end
 
 end

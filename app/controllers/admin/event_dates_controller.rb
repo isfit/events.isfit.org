@@ -3,7 +3,7 @@ class Admin::EventDatesController < ApplicationController
   layout 'admin'
   def create
     @e = Event.find(params[:event_id])
-    @event = EventDate.new(params[:event_date])
+    @event = EventDate.new(event_date_params)
     @event.event = @e
     if @event.save
       redirect_to admin_event_path(@e)
@@ -38,5 +38,10 @@ class Admin::EventDatesController < ApplicationController
     @event = EventDate.find(params[:id])
     @event.destroy
     redirect_to admin_event_path(@event.event)
+  end
+
+  private 
+  def event_date_params
+    params.require(:event_date).permit(:id, :datetime, :event_id, :url, :sold_out, :created_at, :updated_at, :start_at, :end_at, :all_festival)
   end
 end
