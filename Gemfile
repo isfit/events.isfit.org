@@ -39,6 +39,8 @@ gem 'pry'
 gem 'paperclip'
 
 gem 'bcrypt-ruby'
+gem 'therubyracer'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
