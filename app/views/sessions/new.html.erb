@@ -1,8 +1,12 @@
-<%= form_tag sessions_path, method: 'post', class:"form-signin" do %>
-  <h2 class="form-signin-heading">Please sign in</h2>
-  <%= text_field_tag :username, nil, class:"input-block-level", placeholder:"Username" %>
 
-  <%= password_field_tag :password, nil, class:"input-block-level", placeholder:"Password" %>
+<%= form_tag sessions_path, method: 'post', class:"form-signin", role:"form" do %>
+	<div class="row text-center">
+ 		<h2 class="form-signin-heading">Vennligst logg inn</h2>
+ 		<%= text_field_tag :username, nil, class:"input-block-level", placeholder:"Username" %>
 
-  <%= submit_tag "Login", class:"btn btn-large btn-primary"%>
+		<%= password_field_tag :password, nil, class:"input-block-level", placeholder:"Password" %>
+	</div>
+  <div class="row text-center">
+  	<%= submit_tag "Login", class:"btn btn-large btn-primary"%>
+  </div>
 <% end %>
