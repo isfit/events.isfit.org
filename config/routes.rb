@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'marketing/poster'
 
   get 'login' => 'sessions#new'
-  post 'logout' => 'sessions#destroy'
+  get 'logout' => 'sessions#destroy'
   post 'sessions' => 'sessions#create'
 
   get "2015/:id" => "events#show", :constraints =>  { :year => /\d/ }
