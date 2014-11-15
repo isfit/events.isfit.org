@@ -16,7 +16,7 @@
     <tr>
       <td><%= speaker.name %></td>
       <td><%= speaker.event.title %></td>
-      <td><%= link_to 'Edit', edit_admin_speaker_path(speaker), class: "btn" %></td>
+      <td><%= link_to 'Edit', edit_admin_speaker_path(speaker), class: "btn btn-default" %></td>
       <td><%= link_to 'Destroy', admin_speaker_path(speaker), confirm: 'Are you sure?', method: :delete, class: "btn btn-danger" %></td>
     </tr>
   <% end %>
