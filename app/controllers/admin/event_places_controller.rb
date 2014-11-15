@@ -5,7 +5,7 @@ class Admin::EventPlacesController < ApplicationController
   end
 
   def create
-    @event_place = EventPlace.new(params[:event_place])
+    @event_place = EventPlace.new(event_place_params)
 
     if @event_place.save
       redirect_to admin_event_places_path
@@ -20,7 +20,7 @@ class Admin::EventPlacesController < ApplicationController
 
   def update
     @event_place = EventPlace.find(params[:id])
-    @event_place.update_attributes(params[:event_place])
+    @event_place.update_attributes(event_place_params)
 
     if @event_place.save
       redirect_to admin_event_places_path
@@ -32,5 +32,10 @@ class Admin::EventPlacesController < ApplicationController
 
   def index
     @event_places = EventPlace.all
+  end
+
+  private 
+  def event_place_params
+    params.require(:event_place).permit(:id, :name, :longitude, :latitude, :created_at, :updated_at)
   end
 end
