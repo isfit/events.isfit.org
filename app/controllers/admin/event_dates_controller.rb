@@ -24,7 +24,7 @@ class Admin::EventDatesController < ApplicationController
 
   def update
     @event = EventDate.find(params[:id])
-    @event.update_attributes(params[:event_date])
+    @event.update_attributes(event_date_params)
 
     if @event.save
       redirect_to admin_event_path(@event.event)

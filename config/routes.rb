@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :events do
       resources :event_dates
       member do
+        patch "/event_dates" => "event_dates#update", :as => "/event"
         get :weight_move
       end
     end
