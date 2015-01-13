@@ -38,6 +38,45 @@ body {
 .event-types > li > a{
 	color: #FFF !important;
 }
+
+.navbar_art{
+	border-bottom: 5px solid #3AA935;
+}
+.navbar_concert{
+	border-bottom: 5px solid #5B3C8F;
+}
+.navbar_ceremony{
+	border-bottom: 5px solid #EA5A0B;
+}
+.navbar_sceneshow{
+	border-bottom: 5px solid #F9B233;
+}
+.navbar_debate{
+	border-bottom: 5px solid #62abc8;
+}
+.navbar_other{
+	border-bottom: 5px solid #575756;
+}
+
+.navbar_art:hover{
+	background-color: #3AA935;
+}
+.navbar_concert:hover{
+	background-color: #5B3C8F;
+}
+.navbar_ceremony:hover{
+	background-color: #EA5A0B;
+}
+.navbar_sceneshow:hover{
+	background-color: #F9B233;
+}
+.navbar_debate:hover{
+	background-color: #62abc8;
+}
+.navbar_other:hover{
+	background-color: #575756;
+}
+
 .footer{
   background-color: #0099CC;
   width: 100%;

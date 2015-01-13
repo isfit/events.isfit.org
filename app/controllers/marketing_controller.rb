@@ -14,5 +14,12 @@ class MarketingController < ApplicationController
       @events = @events.joins(:event => :event_type).where('event_types.name = ?', params['eventtype'].tr('_', ' '))
       @festival_events = @festival_events.joins(:event => :event_type).where('event_types.name = ?', params['eventtype'].tr('_', ' '))
     end
+    if I18n.locale.to_s.eql?("no")
+      @events = @events.where("body_no IS NOT NULL AND title_no IS NOT NULL AND body_no > '' AND title_no > ''").limit(5)
+      @festival_events = @events.where("body_no IS NOT NULL OR title_no IS NOT NULL AND body_no > '' AND title_no > '' ")
+    elsif I18n.locale.to_s.eql?("en")
+      @events = @events.where("body_en IS NOT NULL AND title_en IS NOT NULL AND body_en > '' AND title_en > ''").limit(5)
+      @festival_events = @events.where("body_en IS NOT NULL OR title_en IS NOT NULL AND body_en > '' AND title_en > '' ")
+    end
   end
 end

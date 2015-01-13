@@ -1,4 +1,32 @@
-<div class="col-md-12">
+<div class="col-md-12 top-poster-content">
+	<%= link_to calendar_path do%>
+		<div class="col-md-3 calendar poster-content blue">
+			<div class="inner-poster-content">
+				<h3><%=t("event.calendar")%></h3>
+				<i class="fa fa-calendar fa-4x"></i>
+			</div>
+		</div>
+	<% end %>
+	<div class="col-md-3 info poster-content orange">
+		<div class="inner-poster-content">
+			<h3><%=t("event.information")%></h3>
+			<i class="fa fa-info-circle fa-4x"></i>
+		</div>
+	</div>
+	<div class="col-md-3 speakers poster-content blue">
+		<div class="inner-poster-content">
+			<h3><%=t("event.speaker")%></h3>
+			<i class="fa fa-microphone fa-4x"></i>
+		</div>
+	</div>
+	<div class="col-md-3 free poster-content orange">
+		<div class="inner-poster-content">
+			<h3><%=t("event.free")%></h3>
+			<i class="fa fa-usd fa-4x"></i>
+		</div>
+	</div>
+</div>
+<div class="col-md-12 frontpage_events">
 	<% counter = 0 %> 
 	<% @events.each_with_index do |date, i| %>
 		<% event = date.event %>

@@ -6,7 +6,8 @@
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th>Title</th>
+      <th>Norwegian title</th>
+      <th>English title</th>
       <th>Priority</th>
       <th>Show</th>
       <th>Edit</th>
@@ -16,7 +17,8 @@
 
   <% @events.each do |event| %>
     <tr>
-      <td><%= event.title %></td>
+      <td><%= event.title_no %></td>
+      <td><%= event.title_en%></td>
       <td><%= link_to '+', weight_move_admin_event_path(event, :up => 1), class: "btn btn-default" %> <%= link_to '-', weight_move_admin_event_path(event, :up => 0), class: "btn btn-default" %></td>
       <td><%= link_to 'Show', admin_event_path(event), class: "btn btn-primary" %></td>
       <td><%= link_to 'Edit', edit_admin_event_path(event), class: "btn btn-default" %></td>

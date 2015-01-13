@@ -53,6 +53,9 @@ gem 'capistrano-bundler', group: :development
 gem 'font-awesome-sass'
 gem 'bluecloth'
 
+#Language gem
+gem 'rails-i18n'
+
 
 
 # Use debugger

@@ -6,7 +6,11 @@
     <% @events.each do |date| %>
       <% event = date.event %>
       <a href="/2015/<%=date.id%>" class="event-link">
-        <div class="col-md-12 <%=event.event_type.name.downcase%> event_category event-field">
+        <% if event.event_type.nil? || event.event_type.name.nil? %>
+          <div class="col-md-12 other event_category event-field">
+        <% else %>
+          <div class="col-md-12 <%=event.event_type.name.downcase%> event_category event-field">
+        <% end %>
           <div class="col-md-8">
             <h3><%= event.title %></h3>
           </div>
