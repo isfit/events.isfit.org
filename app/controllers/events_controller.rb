@@ -14,7 +14,6 @@ class EventsController < ApplicationController
     render 'index'
   end
   def date
-        # Gets all eventdates and sorts them based on date and weight
     @events = EventDate.joins(:event).order("start_at ASC, events.weight DESC")
     if not (current_user && current_user.admin?)
       @events = @events.where("publish_at < '#{Time.now}'")
@@ -35,7 +34,6 @@ class EventsController < ApplicationController
       @events = @events.where("body_en IS NOT NULL AND title_en IS NOT NULL AND body_en > '' AND title_en > ''")
       @festival_events = @events.where("body_en IS NOT NULL OR title_en IS NOT NULL AND body_en > '' AND title_en > '' ")
     end
-    @events = @events.order("all_festival DESC")
 
 
   end
