@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
   def free
     @events = EventDate.joins(:event).order("start_at ASC")
-    @events = @events.where("(price_member = 0 AND price_other = 0) OR (price_member is NULL AND price_member IS NULL)")
+    @events = @events.where("(price_member = 0 AND price_other = 0) OR (price_member is NULL AND price_other IS NULL)")
     @events = @events.where("start_at > '#{6.hours.ago}'")
-    @events = @events.where("deleted = 0 AND all_festival = 1")
+    @events = @events.where("deleted = 0")
     #@festival_events = @events.where("all_festival = 1")
     #@events = @events.where("all_festival = 0 OR all_festival IS NULL")
     if I18n.locale.to_s.eql?("no")

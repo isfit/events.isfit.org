@@ -26,12 +26,12 @@
       </a>
     <% end %>
   </div>
-  <div class="event-preview col-md-4 visible-lg" id="event-preview">
+  <div class="event-preview col-md-4 visible-lg no_padding_left" id="event-preview">
     <% @events.each_with_index do |date, i| %>
       <% event = date.event %>
       <% if i == 0 %>
         <div class="event_content">
-          <div class="col-md-6">
+          <div class="col-md-6 no_padding_left">
           <%= image_tag event.image(:cover), :style => 'width: 100%' %>
           </div>
           <div class="col-md-6">
@@ -64,7 +64,7 @@
         </div>
       <% else %>
         <div class="event_content event_hidden">
-          <div class="col-md-6">
+          <div class="col-md-6 no_padding_left">
           <%= image_tag event.image(:cover), :style => 'width: 100%' %>
           </div>
           <div class="col-md-6">
