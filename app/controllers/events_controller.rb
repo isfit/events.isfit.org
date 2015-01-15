@@ -1,10 +1,16 @@
 class EventsController < ApplicationController
   def free
     @events = EventDate.joins(:event).order("start_at ASC")
-    @events = @events.where("price_member = 0 AND price_other = 0")
+    @events = @events.where("(price_member = 0 AND price_other = 0) OR (price_member is NULL AND price_member IS NULL)")
     @events = @events.where("start_at > '#{6.hours.ago}'")
-    @festival_events = @events.where("all_festival = 1")
-    @events = @events.where("all_festival = 0 OR all_festival IS NULL")
+    @events = @events.where("deleted = 0 AND all_festival = 1")
+    #@festival_events = @events.where("all_festival = 1")
+    #@events = @events.where("all_festival = 0 OR all_festival IS NULL")
+    if I18n.locale.to_s.eql?("no")
+      @events = @events.where("body_no IS NOT NULL AND title_no IS NOT NULL AND body_no > '' AND title_no > '' ")
+    elsif I18n.locale.to_s.eql?("en")
+      @events = @events.where("body_en IS NOT NULL AND title_en IS NOT NULL AND body_en > '' AND title_en > ''")
+    end
     render 'index'
   end
   def date
@@ -14,7 +20,7 @@ class EventsController < ApplicationController
       @events = @events.where("publish_at < '#{Time.now}'")
     end
     @date = params[:date]
-    @events = @events.where("DATE(start_at) = '#{@date}' OR all_festival = 1")
+    @events = @events.where("(DATE(start_at) = '#{@date}' OR all_festival = 1) AND deleted = 0")
     @festival_events = @events.where("all_festival = 1")
     #@events = @events.where("all_festival IS NULL OR all_festival = 0")
     if params.has_key?(:eventtype)
@@ -29,6 +35,7 @@ class EventsController < ApplicationController
       @events = @events.where("body_en IS NOT NULL AND title_en IS NOT NULL AND body_en > '' AND title_en > ''")
       @festival_events = @events.where("body_en IS NOT NULL OR title_en IS NOT NULL AND body_en > '' AND title_en > '' ")
     end
+    @events = @events.order("all_festival DESC")
 
 
   end
@@ -43,7 +50,7 @@ class EventsController < ApplicationController
       @events = @events.where("publish_at < '#{Time.now}'")
     end
 
-    @events = @events.where("start_at > '#{6.hours.ago}' OR all_festival = 1")
+    @events = @events.where("(start_at > '#{6.hours.ago}' OR all_festival = 1) AND deleted = 0")
     @festival_events = @events.where("all_festival = 1")
     #@events = @events.where("all_festival IS NULL OR all_festival = 0")
     if params.has_key?(:eventtype)

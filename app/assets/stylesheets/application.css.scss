@@ -35,7 +35,13 @@ body {
 	position: relative;
 	min-height: 100%;
 }
+#page-wrapper{
+
+}
 .event-types > li > a{
+	color: #FFF !important;
+}
+.event-types > li > p{
 	color: #FFF !important;
 }
 
@@ -97,4 +103,7 @@ body {
 }
 .no_padding_right{
   padding-right: 0px !important;
+}
+.fa-custom-size{
+    font-size: 1.4em; 
 }

@@ -6,7 +6,7 @@ class MarketingController < ApplicationController
       @events = @events.where("publish_at < '#{Time.now}'")
     end
 
-    @events = @events.where("start_at > '#{6.hours.ago}'")
+    @events = @events.where("start_at > '#{6.hours.ago}' AND deleted = 0")
     @festival_events = @events.where("all_festival = 1")
     @events = @events.where("all_festival IS NULL OR all_festival = 0")
 

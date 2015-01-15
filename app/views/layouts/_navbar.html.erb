@@ -30,6 +30,11 @@
         <li class="navbar_elements navbar_debate"><a href="/debate/"><%=t("navbar.debate")%></a></li>
         <li class="navbar_elements navbar_ceremony"><a href="/ceremony/"><%=t("navbar.ceremony")%></a></li>
         <li class="navbar_elements navbar_other"><a href="/other/"><%=t("navbar.other")%></a></li>
+        <li> 
+            <%= link_to language_link do %>
+            <span><i class="fa fa-flag">&nbsp;</i><%= language_text %></span>
+            <% end %>
+        </li>
 
       </ul>
     </div><!-- /.navbar-collapse -->

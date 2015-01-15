@@ -7,16 +7,21 @@
     ceremony: 'Seremoni'
     other: 'Andre'
   event:
+    isfit_events: "Arrangementer"
     buy: "Kjøp billett"
     price:
       member: "Medlem"
       nonmember: "Ikke medlem"
+      price: 'Pris'
+
     noevents: "Det er ingen arrangementer under denne kategorien på norsk."
     calendar: "Kalender"
     speaker: "Innledere"
     information: "Informasjon"
     free: "Gratis"
     all_festival: "Hele festivalen"
+    date_event: "Arrangementer den"
+    februar: "Februar"
   date:
     abbr_day_names:
     - søn

@@ -28,16 +28,20 @@
     ceremony: 'Ceremony'
     other: 'Other'
   event:
+    isfit_events: "Events"
     buy: "Buy ticket"
     price:
       member: "Member"
       nonmember: "Non-member"
+      price: 'Pris'
     noevents: "There are no events under this category in english."
     calendar: "Calendar"
     speaker: "Speakers"
     information: "Information"
     free: "Free"
-    all_festival: "All festival"   
+    all_festival: "All festival"
+    date_event: "Events" 
+    februar: "February"
   date:
     abbr_day_names:
     - Sun
