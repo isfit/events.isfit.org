@@ -27,6 +27,7 @@
     art: 'Art'
     ceremony: 'Ceremony'
     other: 'Other'
+    concert: 'Concert'
   event:
     isfit_events: "Events"
     buy: "Buy ticket"

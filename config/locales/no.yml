@@ -6,6 +6,7 @@
     art: 'Kunst'
     ceremony: 'Seremoni'
     other: 'Andre'
+    concert: 'Konsert'
   event:
     isfit_events: "Arrangementer"
     buy: "Kjøp billett"
