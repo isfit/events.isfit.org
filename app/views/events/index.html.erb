@@ -1,27 +1,112 @@
-<h1>ISFiT 2015 Events</h1>
-
-<div class="pull-right">
-    <%= link_to 'New Event', new_admin_event_path, class: "btn btn-primary" %>
+<div class="col-md-12">
+  <h1>ISFiT 2015 <%= t("event.isfit_events") %></h1>
 </div>
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Priority</th>
-      <th>Show</th>
-      <th>Edit</th>
-      <th>Destroy</th>
-    </tr>
-  </thead>
-
-  <% @events.each do |event| %>
-    <tr>
-      <td><%= event.title %></td>
-      <td><%= link_to '+', weight_move_admin_event_path(event, :up => 1), class: "btn" %> <%= link_to '-', weight_move_admin_event_path(event, :up => 0), class: "btn" %></td>
-      <td><%= link_to 'Show', admin_event_path(event), class: "btn btn-primary" %></td>
-      <td><%= link_to 'Edit', edit_admin_event_path(event), class: "btn" %></td>
-      <td><%= link_to 'Destroy', admin_event_path(event), confirm: 'Are you sure?', method: :delete, class: "btn btn-danger" %></td>
-    </tr>
-  <% end %>
-
-</table>
+  <% if @events.empty? %>
+    <div class="col-md-12">
+      <p><%= t("event.noevents") %> </p>
+    </div>
+<% else %>
+  <div class="col-md-8">
+    <hr>
+  </div>
+  <div class="col-md-8" id="event-list">
+    <% @events.each do |date| %>
+      <% event = date.event %>
+      <a href="/2015/<%=date.id%>" class="event-link">
+        <div class="col-md-12 <%=event.event_type.name.downcase%> event_category event-field">
+          <div class="col-md-8">
+            <h3><%= event.title %></h3>
+          </div>
+          <div class="col-md-4">
+            <p class="price_events">
+              <% if event.price_member.nil? || event.price_member == 0 %>
+                <b><%= t("event.price.member") %>:</b> 0 <br>
+              <% else %>
+                <b><%= t("event.price.member") %>:</b> <%= event.price_member %><br>
+              <% end %>
+              <% if event.price_other.nil? || event.price_other == 0 %>
+                <b><%= t("event.price.nonmember") %>:</b> 0 <br>
+              <% else %>
+                <b> <%= t("event.price.nonmember") %>:</b> <%= event.price_other %><br>
+              <% end %>
+            </p>     
+          </div>
+        </div>
+      </a>
+    <% end %>
+  </div>
+  <div class="event-preview col-md-4 visible-lg no_padding_left" id="event-preview">
+    <% @events.each_with_index do |date, i| %>
+      <% event = date.event %>
+      <% if i == 0 %>
+        <div class="event_content">
+          <div class="col-md-6 no_padding_left">
+          <%= image_tag event.image(:cover), :style => 'width: 100%' %>
+          </div>
+          <div class="col-md-6">
+            <div class="event-details">
+              <p><i class="fa fa-map-marker">&nbsp&nbsp</i> <%= event.event_place.name %></p>
+              <% if !date.all_festival %>
+                <p><i class="fa fa-calendar"></i> <%= date.start_at.strftime('%d feb') %></p>
+                <p><i class="fa fa-clock-o"></i> <%= date.start_at.strftime('%H:%M') %>
+                  <% if date.end_at %>
+                    - <%= date.end_at.strftime("%H:%M") %>
+                  <% end %>
+                </p>
+              <% else %>
+                <p><i class="fa fa-calendar"></i> <%= t("event.all_festival")%></p>
+              <% end %>
+              </p>
+            </div>
+            <p>
+              <% if event.price_member.nil? || event.price_member == 0 %>
+                <b><%= t("event.price.member") %>:</b> 0 <br>
+              <% else %>
+                <b><%= t("event.price.member") %>:</b> <%= event.price_member %><br>
+              <% end %>
+              <% if event.price_other.nil? || event.price_other == 0 %>
+                <b><%= t("event.price.nonmember") %>:</b> 0 <br>
+              <% else %>
+                <b> <%= t("event.price.nonmember") %>:</b> <%= event.price_other %><br>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      <% else %>
+        <div class="event_content event_hidden">
+          <div class="col-md-6 no_padding_left">
+          <%= image_tag event.image(:cover), :style => 'width: 100%' %>
+          </div>
+          <div class="col-md-6">
+            <div class="event-details">
+              <p><i class="fa fa-map-marker">&nbsp&nbsp</i> <%= event.event_place.name %></p>
+               <% if !date.all_festival %>
+                <p><i class="fa fa-calendar"></i> <%= date.start_at.strftime('%d feb') %></p>
+                <p><i class="fa fa-clock-o"></i> <%= date.start_at.strftime('%H:%M') %>
+                  <% if date.end_at %>
+                    - <%= date.end_at.strftime("%H:%M") %>
+                  <% end %>
+                </p>
+              <% else %>
+                <p><i class="fa fa-calendar"></i> <%= t("event.all_festival")%></p>
+              <% end %>
+              </p>
+            </div>
+            <p>
+              <% if event.price_member.nil? || event.price_member == 0 %>
+                <b><%= t("event.price.member") %>:</b> 0 <br>
+              <% else %>
+                <b><%= t("event.price.member") %>:</b> <%= event.price_member %><br>
+              <% end %>
+              <% if event.price_other.nil? || event.price_other == 0 %>
+                <b><%= t("event.price.nonmember") %>:</b> 0 <br>
+              <% else %>
+                <b> <%= t("event.price.nonmember") %>:</b> <%= event.price_other %><br>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

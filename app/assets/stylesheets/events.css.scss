@@ -52,6 +52,98 @@
     line-height: 2.3em;
   }
 }
+.event_hidden{
+  display: none;
+}
+.event-link{
+  text-decoration: none;
+  color: #000;
+}
+.event-link:hover{
+  text-decoration: none;
+  color: #000;
+}
+.concert{
+  border-right: 1px solid #5B3C8F;
+  border-top: 1px solid #5B3C8F;
+  border-bottom: 1px solid #5B3C8F;
+  border-left: 5px solid #5B3C8F;
+  background-color: #FFFFFF;
+  margin-top: 3px;
+}
+.performing{
+  border-right: 1px solid #F9B233;
+  border-top: 1px solid #F9B233;
+  border-bottom: 1px solid #F9B233;
+  border-left: 5px solid #F9B233;
+  background-color: #FFFFFF;
+  margin-top: 3px;
+}
+.art{
+  border-right: 1px solid #3AA935;
+  border-top: 1px solid #3AA935;
+  border-bottom: 1px solid #3AA935;
+  border-left: 5px solid #3AA935;
+  background-color: #FFFFFF;
+  margin-top: 3px;
+}
+.ceremony{
+  border-right: 1px solid #EA5A0B;
+  border-top: 1px solid #EA5A0B;
+  border-bottom: 1px solid #EA5A0B;
+  border-left: 5px solid #EA5A0B;
+  background-color: #FFFFFF;
+  margin-top: 3px;
+}
+.debate{
+  border-right: 1px solid #0098CC;
+  border-top: 1px solid #0098CC;
+  border-bottom: 1px solid #0098CC;
+  border-left: 5px solid #0098CC;
+  background-color: #FFFFFF;
+  margin-top: 3px;
+}
+.other{
+  border-right: 1px solid #575756;
+  border-top: 1px solid #575756;
+  border-bottom: 1px solid #575756;
+  border-left: 5px solid #575756;
+  background-color: #FFFFFF;
+  margin-top: 3px;
+}
+.event_category:hover{
+  background-color: #D3D3D3;
+}
+.price_events{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.event-preview{
+  border: 1px solid #000000;
+  position: fixed !important;
+  right: 2%;
+}
+.calendar-date{
+text-align: center;
+}
+.inner-date{
+
+  vertical-align: middle;
+  height: 200px;
+  margin-top: 30px;
+  color: #FFFFFF;
+     
+}
+.inner-date h1{
+    line-height: 150px;
+}
+.inner-date h4{
+  margin-top: -55px;
+}
+.not-isfit{
+  background-color: #5C5C5C;
+}
+
 
 
   @media (max-width: 960px) {

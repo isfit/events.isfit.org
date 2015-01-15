@@ -9,24 +9,36 @@
 				<p><%= @event.event_type.name %> </p>
 	      <div class="event-details">
 	        <p><i class="fa fa-map-marker">&nbsp&nbsp</i> <%= @event.event_place.name %></p>
-	        <p><i class="fa fa-calendar"></i> <%= @datetime.start_at.strftime('%d feb') %></p>
-	        <p><i class="fa fa-clock-o"></i> <%= @datetime.start_at.strftime('%H:%M') %> 
-	          <% if @datetime.end_at %>
-	            - <%= @datetime.end_at.strftime("%H:%M") %>
-	          <% end %>
-	        </p>
+	        <% if !@datetime.all_festival %>
+		        <p><i class="fa fa-calendar"></i> <%= @datetime.start_at.strftime('%d feb') %></p>
+		        <p><i class="fa fa-clock-o"></i> <%= @datetime.start_at.strftime('%H:%M') %>
+		          <% if @datetime.end_at %>
+		            - <%= @datetime.end_at.strftime("%H:%M") %>
+		          <% end %>
+		        </p>
+	        <% else %>
+	        	<p><i class="fa fa-calendar"></i> <%= t("event.all_festival")%></p>
+	       	<% end %>
 	      </div>
       
     <div>
 				<div class="tickets">
 	        <table>
 	          <tr>
-	            <td>Member</td>
-	            <td><%=@event.price_member%>,-</td>
+	          	<td><%= t("event.price.member")%></td>
+	          	<% if @event.price_member.nil? || @event.price_member == 0 %>
+	          		<td>0,-</td>
+	          	<% else %>
+	          		<td><%=@event.price_member%>,-</td>
+	          	<% end %>
 	          </tr>
 	          <tr>
-	            <td>Non-member</td>
-	            <td><%=@event.price_other%>,-</td>
+	          	<td><%= t("event.price.nonmember")%></td>
+	          	<% if@event.price_other.nil? || @event.price_other == 0 %>
+	          		<td>0,-</td>
+	          	<% else %>
+	          		<td><%=@event.price_other%>,-</td>
+	          	<% end %>
 	          </tr>
 	        </table>
         	<% if @datetime.url && @datetime.url != "" %>

@@ -25,8 +25,12 @@ class Event < ActiveRecord::Base
 
 
 	scope :published, lambda { where("publish_at < ?", Time.zone.now) }
-
-
+	def title
+  	I18n.locale.to_s.eql?("no") ? self.title_no : self.title_en
+	end
+	def body
+  	I18n.locale.to_s.eql?("no") ? self.body_no : self.body_en
+	end
 	def start_at
 		e = self.event_dates.first
 		e.nil? ? nil : e.start_at

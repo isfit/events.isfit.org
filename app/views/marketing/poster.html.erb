@@ -1,4 +1,22 @@
-<div class="col-md-12">
+<div class="col-md-12 top-poster-content">
+	<%= link_to calendar_path do%>
+		<div class="col-md-6 calendar poster-content blue">
+			<div class="inner-poster-content">
+				<h3><%=t("event.calendar")%></h3>
+				<i class="fa fa-calendar fa-4x"></i>
+			</div>
+		</div>
+	<% end %>
+	<%= link_to free_event_path do %>
+		<div class="col-md-6 free poster-content orange">
+			<div class="inner-poster-content">
+				<h3><%=t("event.free")%></h3>
+				<i class="fa fa-usd fa-4x"></i>
+			</div>
+		</div>
+	<% end %>
+</div>
+<div class="col-md-12 frontpage_events">
 	<% counter = 0 %> 
 	<% @events.each_with_index do |date, i| %>
 		<% event = date.event %>
@@ -6,7 +24,7 @@
 			<div class="row">
 				<div class="col-md-8">
 					<a href="2015/<%=date.id%>">
-						<div id="top-left" class="col-md-12 event_pic_<%= i%2%>" style="background:url(<%=event.image(:cover)%>) no-repeat center center; background-size: cover;">
+						<div id="top-left" class="col-md-12 event_pic_<%= i%2%>" style="background:url(<%=event.image_front(:cover)%>) no-repeat center center; background-size: cover;">
 							<h1><span><%= event.title %></span></h1>
 			      </div>
 		    	</a>
@@ -14,7 +32,7 @@
 		<% elsif i == 1 %>
 				<div class="col-md-4">
 					<a href="2015/<%=date.id%>">
-						<div id="top-left" class="col-md-12 event_pic_<%= i%2%>" style="background:url(<%=event.image(:cover)%>) no-repeat center center; background-size: cover;">
+						<div id="top-left" class="col-md-12 event_pic_<%= i%2%>" style="background:url(<%=event.image_front(:cover)%>) no-repeat center center; background-size: cover;">
 							<h1><span><%= event.title %></span></h1>
 			      </div>
 		    	</a>			
@@ -26,7 +44,7 @@
 			<% end %>
 			<div class="col-md-4">
 					<a href="2015/<%=date.id%>">
-						<div id="small-boxes" class="col-md-12 event_pic_<%= i%2%>" style="background:url(<%=event.image(:cover)%>) no-repeat center center; background-size: cover;">
+						<div id="small-boxes" class="col-md-12 event_pic_<%= i%2%>" style="background:url(<%=event.image_front(:cover)%>) no-repeat center center; background-size: cover;">
 							<h1><span><%= event.title %></span></h1>
 			      </div>
 		    	</a>

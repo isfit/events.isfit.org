@@ -9,8 +9,15 @@
 		<%= image_tag @event.image_front(:cover) %>
 		<div class="row">
 			<div class="span5">
+				<p>Norwegian body</p>
 				<p class="lead">
-					<%= @event.body %>
+					<%= @event.body_no %>
+				</p>
+			</div>
+			<div class="span5">
+				<p>English body</p>
+				<p class="lead">
+					<%= @event.body_en %>
 				</p>
 			</div>
 			<div class="span3">
