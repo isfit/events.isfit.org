@@ -23,6 +23,13 @@
     all_festival: "Hele festivalen"
     date_event: "Arrangementer den"
     februar: "Februar"
+    Monday: "Mandag"
+    Thuesday: "Tirsdag"
+    Wednesday: "Onsdag"
+    Thursday: "Torsdag"
+    Friday: "Fredag"
+    Saturday: "Lørdag"
+    Sunday: "Søndag"
   date:
     abbr_day_names:
     - søn
