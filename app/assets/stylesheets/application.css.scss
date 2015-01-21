@@ -83,6 +83,8 @@ body {
 	background-color: #575756;
 }
 
+
+
 .footer{
   background-color: #0099CC;
   width: 100%;
@@ -107,3 +109,37 @@ body {
 .fa-custom-size{
     font-size: 1.4em; 
 }
+  @media (max-width: 992px) {
+  	.navbar-brand{
+  		display: none;
+  	}
+  }
+  @media (max-width: 762px) {
+  	.navbar-brand{
+  		display: block;
+  	}
+  	.navbar_art{
+			border-left: 5px solid #3AA935;
+			border-bottom: 0;
+		}
+		.navbar_concert{
+			border-left: 5px solid #5B3C8F;
+			border-bottom: 0;
+		}
+		.navbar_ceremony{
+			border-left: 5px solid #EA5A0B;
+			border-bottom: 0;
+		}
+		.navbar_sceneshow{
+			border-left: 5px solid #F9B233;
+			border-bottom: 0;
+		}
+		.navbar_debate{
+			border-left: 5px solid #62abc8;
+			border-bottom: 0;
+		}
+		.navbar_other{
+			border-left: 5px solid #575756;
+			border-bottom: 0;
+		}
+  }

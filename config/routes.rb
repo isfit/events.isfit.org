@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get "2015/:id" => "events#show", :constraints =>  { :year => /\d/ }
 
   get 'calendar' => 'events#calendar'
-  get 'date/:date' => 'events#date'
   get 'free_event' =>'events#free'
 
   namespace :admin do

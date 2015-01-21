@@ -28,6 +28,8 @@
     ceremony: 'Ceremony'
     other: 'Other'
     concert: 'Concert'
+    all_events: 'All'
+    free: "Free"
   event:
     isfit_events: "Events"
     buy: "Buy ticket"

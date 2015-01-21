@@ -14,7 +14,7 @@
 					</h3>
 				</div>
 				<% if i == 0 %> 
-					<div class="col-md-12">
+					<div class="col-md-12 cal_info">
 						<div class="col-md-4">
 							<h4><%= t("event.Hva") %></h4>
 						</div>
@@ -27,20 +27,25 @@
 					</div>
 				<% end %>
 			<% end %>
-			<a href="/2015/<%=date.id%>" style="text-decoration:none;">
-				<div class="col-md-12">	
+			<a href="/2015/<%=date.id%>">
+				<div class="col-md-12 calendar_<%=event.event_type.name.downcase%> event_cal_button">	
 					<div class="col-md-4">
-						<h5><%= event.title %></h5>
+						<h5 class="h5_bigscreen"><%= event.title %></h5>
+						<h5 class="h5_hidden"><%= t("event.Hva")%>: <%= event.title %></h5>
 					</div>
 					<div class="col-md-4">
-						<h5><%= t("event.kl") %>. <%= date.start_at.strftime('%H:%M') %></h5>
+						<h5 class="h5_bigscreen"><%= t("event.kl") %>. <%= date.start_at.strftime('%H:%M') %></h5>
+						<h5 class="h5_hidden"><%= t("event.Når") %>: <%= date.start_at.strftime('%H:%M') %></h5>
 					</div>
 					<div class="col-md-4">
-						<h5><%= event.event_place.name %></h5>
+						<h5 class="h5_bigscreen"><%= event.event_place.name %></h5>
+						<h5 class="h5_hidden"><%= t("event.Hvor") %>: <%= event.event_place.name %></h5>
 					</div>
 					<hr>
 				</div>
 			</a>
+			<div class="col-md-12 no_padding">
+			</div>
 		<% end %> 
 	</div>
 </div>

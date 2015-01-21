@@ -7,6 +7,8 @@
     ceremony: 'Seremoni'
     other: 'Andre'
     concert: 'Konsert'
+    all_events: 'Alle'
+    free: "Gratis"
   event:
     isfit_events: "Arrangementer"
     buy: "Kjøp billett"
@@ -19,7 +21,6 @@
     calendar: "Kalender"
     speaker: "Innledere"
     information: "Informasjon"
-    free: "Gratis"
     all_festival: "Hele festivalen"
     date_event: "Arrangementer den"
     februar: "Februar"

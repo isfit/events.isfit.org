@@ -161,6 +161,64 @@ text-align: center;
 .img-tag-event{
   border: 1px solid #0099cc;
 }
+.h5_bigscreen{
+}
+.h5_hidden{
+  display: none;
+}
+.event_cal_button{
+  color: #000;
+}
+.event_cal_button:hover{
+
+}
+.calendar_art{
+  border-left: 5px solid #3AA935;
+}
+.calendar_concert{
+  border-left: 5px solid #5B3C8F;
+}
+.calendar_ceremony{
+  border-left: 5px solid #EA5A0B;
+}
+.calendar_sceneshow{
+  border-left: 5px solid #F9B233;
+}
+.calendar_debate{
+  border-left: 5px solid #62abc8;
+}
+.calendar_other{
+  border-left: 5px solid #575756;
+}
+.event_cal_button{
+  background-color: #FFFFFF;
+}
+
+.calendar_art:hover{
+  background-color: #3AA935;
+  color: #000;
+}
+.calendar_concert:hover{
+  background-color: #5B3C8F;
+  color: #000;
+}
+.calendar_ceremony:hover{
+  background-color: #EA5A0B;
+  color: #000;
+}
+.calendar_sceneshow:hover{
+  background-color: #F9B233;
+  color: #000;
+}
+.calendar_debate:hover{
+  background-color: #62abc8;
+  color: #000;
+}
+.calendar_other:hover{
+  background-color: #575756;
+  color: #000;
+}
+
 
 
   @media (max-width: 960px) {
@@ -174,3 +232,15 @@ text-align: center;
       border-right: 0;
     }
   }
+  @media (max-width: 992px) {
+    .h5_bigscreen{
+      display: none;
+    }
+    .h5_hidden{
+      display: block;
+    }
+    .cal_info{
+      display: none;
+    }
+  }
+
