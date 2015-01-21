@@ -1,27 +1,46 @@
 <div class="container" id="page-wrapper">
 	<div class="col-md-12">
 		<% old_event_date = nil %>
-		<h1> Isfit 2015 Arrangementer </h1>
-			<% @events.each do |date| %>
-				<% event = date.event %>
-				<% if old_event_date.nil? || !old_event_date.to_s.eql?(date.start_at.strftime('%d').to_s) %>
-					<% old_event_date = date.start_at.strftime('%d') %>
+		<div class="col-md-12">
+			<h1> Isfit 2015 <%= t("event.Presenterer") %> </h1>
+		</div>
+		<% @events.each_with_index do |date, i| %>
+			<% event = date.event %>
+			<% if old_event_date.nil? || !old_event_date.to_s.eql?(date.start_at.strftime('%d').to_s) %>
+				<% old_event_date = date.start_at.strftime('%d') %>
+				<div class="col-md-12">
+					<h3> 
+						<%= t("event.#{date.start_at.strftime('%A')}") %> <%= date.start_at.strftime('%d') %>. Februar 
+					</h3>
+				</div>
+				<% if i == 0 %> 
 					<div class="col-md-12">
-						<h2> 
-							<%= t("event.#{date.start_at.strftime('%A')}") %> <%= date.start_at.strftime('%d') %>. Februar 
-						</h2>
-						<hr>
+						<div class="col-md-4">
+							<h4><%= t("event.Hva") %></h4>
+						</div>
+						<div class="col-md-4">
+							<h4><%= t("event.Når") %></h4>
+						</div>
+						<div class="col-md-4">
+							<h4><%= t("event.Hvor") %></h4>
+						</div>
 					</div>
 				<% end %>
-				<div class="col-md-12">
-
-					
-					<h3><%= event.title %></h3>
-					<%= date.start_at %>
-					<%= event.event_place.name %>
+			<% end %>
+			<a href="/2015/<%=date.id%>" style="text-decoration:none;">
+				<div class="col-md-12">	
+					<div class="col-md-4">
+						<h5><%= event.title %></h5>
+					</div>
+					<div class="col-md-4">
+						<h5><%= t("event.kl") %>. <%= date.start_at.strftime('%H:%M') %></h5>
+					</div>
+					<div class="col-md-4">
+						<h5><%= event.event_place.name %></h5>
+					</div>
+					<hr>
 				</div>
-			<% end %> 
+			</a>
+		<% end %> 
 	</div>
-
-
 </div>

@@ -43,6 +43,11 @@
     all_festival: "All festival"
     date_event: "Events" 
     februar: "February"
+    Presenterer: "Presents"
+    Hva: "What"
+    Hvor: "Where"
+    Når: "When"
+    kl: "at"
   date:
     abbr_day_names:
     - Sun
