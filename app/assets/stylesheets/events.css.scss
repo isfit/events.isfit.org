@@ -181,7 +181,7 @@ text-align: center;
 .calendar_ceremony{
   border-left: 5px solid #EA5A0B;
 }
-.calendar_sceneshow{
+.calendar_performing{
   border-left: 5px solid #F9B233;
 }
 .calendar_debate{
@@ -192,31 +192,32 @@ text-align: center;
 }
 .event_cal_button{
   background-color: #FFFFFF;
+  color: #000000;
 }
 
 .calendar_art:hover{
   background-color: #3AA935;
-  color: #000;
+  color: #FFFFFF;
 }
 .calendar_concert:hover{
   background-color: #5B3C8F;
-  color: #000;
+  color: #FFFFFF;
 }
 .calendar_ceremony:hover{
   background-color: #EA5A0B;
-  color: #000;
+  color: #FFFFFF;
 }
-.calendar_sceneshow:hover{
+.calendar_performing:hover{
   background-color: #F9B233;
-  color: #000;
+  color: #FFFFFF;
 }
 .calendar_debate:hover{
   background-color: #62abc8;
-  color: #000;
+  color: #FFFFFF;
 }
 .calendar_other:hover{
   background-color: #575756;
-  color: #000;
+  color: #FFFFFF;
 }
 
 
