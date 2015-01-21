@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   
 
-
   get 'marketing/poster'
 
   get 'login' => 'sessions#new'
