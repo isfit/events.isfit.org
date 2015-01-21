@@ -1,58 +1,59 @@
-<div class="col-md-12">
-	<div class="row">
-		<div class="col-md-12 no_padding event-box">
-			<div class="col-md-7 no_padding event-img">
-				<%= image_tag @event.image(:cover), :style => "width:100%" %>
+<div class="container" id="page-wrapper">
+	<div class="col-md-12 events_show">
+		<div class="row">
+			<h1><%= @event.title %> </h1>
+			<div class="col-md-7 no_padding">
+				<div class="col-md-12 no_padding event-box">
+					<div class="col-md-5 event-info no_padding">
+						<p>Type: <%= @event.event_type.name %> </p>
+			      <div class="event-details">
+			        <p><i class="fa fa-map-marker">&nbsp&nbsp</i> <%= @event.event_place.name %></p>
+			        <% if !@datetime.all_festival %>
+				        <p><i class="fa fa-calendar"></i> <%= @datetime.start_at.strftime('%d feb') %></p>
+				        <p><i class="fa fa-clock-o"></i> <%= @datetime.start_at.strftime('%H:%M') %>
+				          <% if @datetime.end_at %>
+				            - <%= @datetime.end_at.strftime("%H:%M") %>
+				          <% end %>
+				        </p>
+			        <% else %>
+			        	<p><i class="fa fa-calendar"></i> <%= t("event.all_festival")%></p>
+			       	<% end %>
+			      </div>
+		    	<div>
+						<div class="tickets">
+			        <table>
+			          <tr>
+			          	<td><%= t("event.price.member")%></td>
+			          	<% if @event.price_member.nil? || @event.price_member == 0 %>
+			          		<td>0,-</td>
+			          	<% else %>
+			          		<td><%=@event.price_member%>,-</td>
+			          	<% end %>
+			          </tr>
+			          <tr>
+			          	<td><%= t("event.price.nonmember")%></td>
+			          	<% if@event.price_other.nil? || @event.price_other == 0 %>
+			          		<td>0,-</td>
+			          	<% else %>
+			          		<td><%=@event.price_other%>,-</td>
+			          	<% end %>
+			          </tr>
+			        </table>
+		        	<% if @datetime.url && @datetime.url != "" %>
+		          	<a href="<%= @datetime.url %>">
+		            	<div class="event-button round">Buy ticket</div>
+		          	</a>
+		        	<% end %>
+		      	</div>
+					</div>
+				</div>
 			</div>
-			<div class="col-md-5 event-info no_padding">
-				<h1><%= @event.title %> </h1>
-				<p><%= @event.event_type.name %> </p>
-	      <div class="event-details">
-	        <p><i class="fa fa-map-marker">&nbsp&nbsp</i> <%= @event.event_place.name %></p>
-	        <% if !@datetime.all_festival %>
-		        <p><i class="fa fa-calendar"></i> <%= @datetime.start_at.strftime('%d feb') %></p>
-		        <p><i class="fa fa-clock-o"></i> <%= @datetime.start_at.strftime('%H:%M') %>
-		          <% if @datetime.end_at %>
-		            - <%= @datetime.end_at.strftime("%H:%M") %>
-		          <% end %>
-		        </p>
-	        <% else %>
-	        	<p><i class="fa fa-calendar"></i> <%= t("event.all_festival")%></p>
-	       	<% end %>
-	      </div>
-      
-    <div>
-				<div class="tickets">
-	        <table>
-	          <tr>
-	          	<td><%= t("event.price.member")%></td>
-	          	<% if @event.price_member.nil? || @event.price_member == 0 %>
-	          		<td>0,-</td>
-	          	<% else %>
-	          		<td><%=@event.price_member%>,-</td>
-	          	<% end %>
-	          </tr>
-	          <tr>
-	          	<td><%= t("event.price.nonmember")%></td>
-	          	<% if@event.price_other.nil? || @event.price_other == 0 %>
-	          		<td>0,-</td>
-	          	<% else %>
-	          		<td><%=@event.price_other%>,-</td>
-	          	<% end %>
-	          </tr>
-	        </table>
-        	<% if @datetime.url && @datetime.url != "" %>
-          	<a href="<%= @datetime.url %>">
-            	<div class="event-button round">Buy ticket</div>
-          	</a>
-        	<% end %>
-      	</div>
-			</div>
+			<div class="col-md-12 no_padding">
+	        <section class="body"><%= format @event.body%></section>
+	    </div>	
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-        <section class="body"><%= format @event.body%></section>
-    </div>
+		<div class="col-md-5 event_image">
+			<%= image_tag @event.image(:cover), :class => "img-tag-event", :style => "width: 100%" %>
+		</div>
 	</div>
 </div>

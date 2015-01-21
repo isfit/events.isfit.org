@@ -1,7 +1,6 @@
 
 .event-box{
   background-color: #0099CC;
-  border: 1px solid #000;
   a:hover {
     text-decoration: none;
   }
@@ -10,8 +9,12 @@
   border-right: 5px solid #EFAB44;
 
 }
+.tickets{
+  margin-bottom: 5px;
+}
 .event-info{
   color: white;
+  margin-top: 5px;
   h1{
     margin-left: 20px;
   }
@@ -143,7 +146,21 @@ text-align: center;
 .not-isfit{
   background-color: #5C5C5C;
 }
+.events_show{
+  margin-top: 10px;
+}
+.event_banner{
+  display: block;
+  margin-top: -20px;
+}
 
+.event_image{
+  float: right;
+  display: inline;
+}
+.img-tag-event{
+  border: 1px solid #0099cc;
+}
 
 
   @media (max-width: 960px) {

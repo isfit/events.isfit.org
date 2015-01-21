@@ -1,29 +1,31 @@
-<h1>ISFiT 2015 Events</h1>
+<div class="container" id="page-wrapper">
+  <h1>ISFiT 2015 Events</h1>
 
-<div class="pull-right">
-    <%= link_to 'New Event', new_admin_event_path, class: "btn btn-primary" %>
+  <div class="pull-right">
+      <%= link_to 'New Event', new_admin_event_path, class: "btn btn-primary" %>
+  </div>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Norwegian title</th>
+        <th>English title</th>
+        <th>Priority</th>
+        <th>Show</th>
+        <th>Edit</th>
+        <th>Destroy</th>
+      </tr>
+    </thead>
+
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.title_no %></td>
+        <td><%= event.title_en%></td>
+        <td><%= link_to '+', weight_move_admin_event_path(event, :up => 1), class: "btn btn-default" %> <%= link_to '-', weight_move_admin_event_path(event, :up => 0), class: "btn btn-default" %></td>
+        <td><%= link_to 'Show', admin_event_path(event), class: "btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_admin_event_path(event), class: "btn btn-default" %></td>
+        <td><%= link_to 'Destroy', admin_event_path(event), confirm: 'Are you sure?', method: :delete, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+
+  </table>
 </div>
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Norwegian title</th>
-      <th>English title</th>
-      <th>Priority</th>
-      <th>Show</th>
-      <th>Edit</th>
-      <th>Destroy</th>
-    </tr>
-  </thead>
-
-  <% @events.each do |event| %>
-    <tr>
-      <td><%= event.title_no %></td>
-      <td><%= event.title_en%></td>
-      <td><%= link_to '+', weight_move_admin_event_path(event, :up => 1), class: "btn btn-default" %> <%= link_to '-', weight_move_admin_event_path(event, :up => 0), class: "btn btn-default" %></td>
-      <td><%= link_to 'Show', admin_event_path(event), class: "btn btn-primary" %></td>
-      <td><%= link_to 'Edit', edit_admin_event_path(event), class: "btn btn-default" %></td>
-      <td><%= link_to 'Destroy', admin_event_path(event), confirm: 'Are you sure?', method: :delete, class: "btn btn-danger" %></td>
-    </tr>
-  <% end %>
-
-</table>
