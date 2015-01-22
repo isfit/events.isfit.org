@@ -28,7 +28,7 @@
 				<% end %>
 			<% end %>
 			<a href="/2015/<%=date.id%>">
-				<div class="col-md-12 calendar_<%=event.event_type.name.downcase%> event_cal_button">	
+				<div class="col-md-12 calendar_<%=event.event_type.name_en.downcase%> event_cal_button">	
 					<div class="col-md-4">
 						<h5 class="h5_bigscreen"><%= event.title %></h5>
 						<h5 class="h5_hidden"><%= t("event.what")%>: <%= event.title %></h5>
