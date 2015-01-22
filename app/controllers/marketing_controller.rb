@@ -11,7 +11,7 @@ class MarketingController < ApplicationController
     @events = @events.where("all_festival IS NULL OR all_festival = 0")
 
     if params.has_key?(:eventtype)
-      @events = @events.joins(:event => :event_type).where('event_types.name = ?', params['eventtype'].tr('_', ' '))
+      @events = @events.joins(:event => :event_type).where('event_types.name_en = ?', params['eventtype'].tr('_', ' '))
       @festival_events = @festival_events.joins(:event => :event_type).where('event_types.name = ?', params['eventtype'].tr('_', ' '))
     end
     if I18n.locale.to_s.eql?("no")
