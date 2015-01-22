@@ -34,6 +34,37 @@
 .body{
   margin-top: 10px;
 }
+
+.buy-button{
+  background-color: #EFAB44;
+  width: 40%;
+  margin-left: 20px;
+  height: 40px;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-top: 20px;
+  text-align: center;
+
+}
+.sold-out-button{
+  background-color: #666666;
+  width: 40%;
+  margin-left: 20px;
+  height: 40px;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-top: 20px;
+  text-align: center;
+}
+.buy-button p{
+  padding-top: 10px;
+  margin-left: 0;
+}
+.sold-out-button p{
+  padding-top: 10px;
+  margin-left: 0;
+}
+
 .event-button{
   margin-left: 20px;
   background-color: #EFAB44;

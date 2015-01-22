@@ -45,11 +45,13 @@
     all_festival: "All festival"
     date_event: "Events" 
     februar: "February"
-    Presenterer: "Presents"
-    Hva: "What"
-    Hvor: "Where"
-    Når: "When"
-    kl: "at"
+    presents: "Presents"
+    what: "What"
+    where: "Where"
+    when: "When"
+    time: "at"
+    buy_ticket: "Buy ticket"
+    sold_out: "Sold out"
   date:
     abbr_day_names:
     - Sun

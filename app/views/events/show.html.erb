@@ -40,9 +40,17 @@
 			          </tr>
 			        </table>
 		        	<% if @datetime.url && @datetime.url != "" %>
-		          	<a href="<%= @datetime.url %>">
-		            	<div class="event-button round">Buy ticket</div>
-		          	</a>
+		        		<% if @datetime.sold_out %>
+			            <div class="sold-out-button">
+			            	<p><%= t('event.sold_out')%></p>
+			            </div>
+		        		<% else %>
+			          	<a href="<%= @datetime.url %>">
+			            	<div class="buy-button">
+			            		<p><%= t('event.buy_ticket')%></p>
+			            	</div>
+			          	</a>
+		          	<% end %>
 		        	<% end %>
 		      	</div>
 					</div>
