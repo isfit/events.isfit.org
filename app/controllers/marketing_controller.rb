@@ -22,4 +22,7 @@ class MarketingController < ApplicationController
       @festival_events = @events.where("body_en IS NOT NULL OR title_en IS NOT NULL AND body_en > '' AND title_en > '' ")
     end
   end
+
+  def information
+  end
 end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
 
   get 'marketing/poster'
+get 'information' => 'marketing#information'
 
   get 'login' => 'sessions#new'
   get 'logout' => 'sessions#destroy'
